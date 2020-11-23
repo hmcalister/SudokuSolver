@@ -11,6 +11,7 @@ Click into a square and type a number to enter it. Backspace deletes a number fr
 Currently, the GUI doesn't have buttons for solve or clear, which would be very useful and intuitive.
 It would be nice if using the arrow keys could navigate around the board, rather than having to click into each square. This would require a new data structure to track active squares which could be bad practice.
 The solving algorithm can hang if an implied invalid state is entered. For example, 
+```
 0 0 0  | 0 0 0  | 0 0 1
 0 0 0  | 0 0 0  | 0 0 2
 0 0 0  | 0 0 0  | 0 0 3
@@ -22,5 +23,5 @@ The solving algorithm can hang if an implied invalid state is entered. For examp
 0 0 0  | 0 0 0  | 0 0 7
 0 0 0  | 0 0 0  | 0 0 8
 9 8 7  | 6 5 4  | 3 2 0
-
+```
 this implies the last square needs to be a 9 and a 1. Because the solving algorithm cannot validate either number, it will fail eventually. But in order to fail it needs to try every possible state of the board before that square. i.e. it will try approximately 9^81 states before finally declaring this state invalid. That's a little beyond my computation power, so instead I am considering just adding a timer that alerts the user if a state is taking too long to compute. Because valid states take less than a second to compute, this would be an easy way to differentiate between valid and invalid states.
