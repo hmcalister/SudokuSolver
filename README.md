@@ -7,7 +7,7 @@ solver.py is the solving algorithms for the sodoku. The basis of this is backtra
 
 Click into a square and type a number to enter it. Backspace deletes a number from a square. Press "S" to solve the board, or "C" to clear all squares.
 
-#TODO
+# TODO
 Currently, the GUI doesn't have buttons for solve or clear, which would be very useful and intuitive.
 It would be nice if using the arrow keys could navigate around the board, rather than having to click into each square. This would require a new data structure to track active squares which could be bad practice.
 The solving algorithm can hang if an implied invalid state is entered. For example, 
